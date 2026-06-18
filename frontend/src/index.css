@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Видим focus ring за достъпност - не го премахваме */
+  :focus-visible {
+    outline: 2px solid theme("colors.sage.500");
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-sage-500 text-white px-4 py-2.5 rounded-lg font-medium text-sm hover:bg-sage-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-white text-ink border border-sage-200 px-4 py-2.5 rounded-lg font-medium text-sm hover:bg-sage-50 transition-colors;
+  }
+  .card {
+    @apply bg-white rounded-xl2 shadow-card border border-sage-100 p-5;
+  }
+  .input-field {
+    @apply w-full px-3.5 py-2.5 rounded-lg border border-sage-200 bg-white text-ink placeholder:text-ink/40 focus:border-sage-500 outline-none transition-colors text-sm;
+  }
+  .label-text {
+    @apply text-sm font-medium text-ink/70 mb-1.5 block;
+  }
+}
